@@ -3,34 +3,42 @@
   <head>
     <title>WEB1 - JavaScript</title>
     <meta charset="utf-8">
+    <script>
+      function LinksSetColor(color) {
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length) {
+          alist[i].style.color = color;
+          i = i + 1;
+        }
+      }
+      function BodySetColor(color) {
+        document.querySelector('body').style.color = color;
+      }
+      function BodySetBackgroundColor(color) {
+        document.querySelector('body').style.backgroundColor = color;
+      }
+      function nightDayHandler(self) {
+        var target = document.querySelector('body');
+        if(self.value === 'night') {
+        Body.SetBackgroundColor('black');
+        Body.SetColor('white');
+        self.value = 'day';
+
+        Links.SetColor('powderblue');
+    } else {
+      Body.SetBackgroundColor('white');
+      Body.SetColor('black');
+      self.vaule = 'night';
+      Links.SetColor('bule');
+      }
+    }
+    </script>
   </head>
   <body>
     <h1><a href="index.html">WEB</a></h1>
     <input type="button" value="night" onclick="
-    var target = document.querySelector('body');
-    if(this.value === 'night') {
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-      this.value = 'day';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length) {
-        alist[i].style.color = 'powderblue';
-        i = i + 1;
-      }
-    } else {
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-      this.value = 'night';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length) {
-        alist[i].style.color = 'blue';
-        i = i + 1;
-      }
-    }
+      nightDayHandler(this);
     ">
     <ol>
       <li><a href="1.html">HTML</a></li>
@@ -45,30 +53,7 @@
     and thus is an essential part of web applications, The vast majority of webside use it, [8] and
     all major web browsers have a dedicated JavaScript engin to execute it.</p>
     <input type="button" value="night" onclick="
-    var target = document.querySelector('body');
-    if(this.value === 'night') {
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-      this.value = 'day';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length) {
-        alist[i].style.color = 'powderblue';
-        i = i + 1;
-      }
-    } else {
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-      this.value = 'night';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length) {
-        alist[i].style.color = 'blue';
-        i = i + 1;
-      }
-    }
+    nightDayHandler(this);
     ">
   </body>
 </html>
